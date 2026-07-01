@@ -70,13 +70,13 @@
         .p-fab-dropdown {
             display: none;
             flex-direction: column;
-            background: var(--panel-bg);
-            border: 1.5px solid var(--border-card);
+            background: #1a2a1a;
+            border: 1.5px solid #3a6b3a;
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 1.2vh;
             min-width: 36vw;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.8);
         }
         .p-fab-dropdown.show { display: flex; }
 
@@ -96,6 +96,11 @@
         }
         .p-fab-item:last-child { border-bottom: none; }
         .p-fab-item:active { background: var(--border-card); }
+        .p-fab-item-update {
+            color: #7a9cc8;
+            font-size: 1.7vh;
+            border-top: 1px dashed var(--border-card);
+        }
 
         .toolbar { display: none; }
 
