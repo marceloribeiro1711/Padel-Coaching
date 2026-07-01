@@ -266,14 +266,14 @@
         }
         .score-cell:last-child { border-right: none; }
         .score-cell .val {
-            font-size: 2.6vh; font-weight: 900; line-height: 1;
+            font-size: 3.4vh; font-weight: 900; line-height: 1;
             font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); transition: color 0.3s;
         }
         .score-cell.won .val { color: #fff; }
         .score-cell.dim .val { color: var(--text-dim); }
         .tb-mini {
             position: absolute; top: 2px; right: 4px;
-            font-size: 3.4vh; font-weight: 700; line-height: 1;
+            font-size: 1.6vh; font-weight: 700; line-height: 1;
             color: var(--text-dim); display: none;
         }
         .score-cell.dim .tb-mini { display: block; }
@@ -421,14 +421,14 @@
         }
         .score-cell:last-child { border-right: none; }
         .score-cell .val {
-            font-size: 2.6vh; font-weight: 900; line-height: 1;
+            font-size: 3.4vh; font-weight: 900; line-height: 1;
             font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); transition: color 0.3s;
         }
         .score-cell.won .val { color: #fff; }
         .score-cell.dim .val { color: var(--text-dim); }
         .tb-mini {
             position: absolute; top: 2px; right: 4px;
-            font-size: 3.4vh; font-weight: 700; line-height: 1;
+            font-size: 1.6vh; font-weight: 700; line-height: 1;
             color: var(--text-dim); display: none;
         }
         .score-cell.dim .tb-mini { display: block; }
@@ -464,8 +464,8 @@
 
         /* END OF MATCH banner */
         .game-over-banner {
-            position: absolute; left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
+            position: absolute; left: 50%; bottom: 0;
+            transform: translate(-50%, 50%);
             background: #e03030; color: #fff;
             font-size: 2vh; font-weight: 900; letter-spacing: 3px;
             text-transform: uppercase; padding: 0.7vh 4vw;
