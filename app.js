@@ -18,7 +18,7 @@
     // ============================================================
     const LIC_KEY       = 'padel_license';
     const LIC_USED_KEY  = 'padel_used_vouchers';
-    const APP_VERSION   = '1.1.95';
+    const APP_VERSION   = '1.1.96';
 
     // ---- Algoritmo HMAC — idêntico ao Vouchers.html ----
     const SECRET_KEY   = 'PadelCoaching-Voucher-Secret-2026-ChangeThisInProd';
@@ -2143,8 +2143,8 @@
         return parts.join('  ·  ');
     }
 
-    const STAT_LABELS = ['Serve Won','Broken Serve','Unforced Errors','Forced Errors','Double Fault','Winners'];
-    const STAT_KEYS   = ['1srv','2srv','ufe','fe','df','win'];
+    const STAT_LABELS = ['Serve Won','Broken Serve','Unforced Errors','Forced Errors','Double Fault','Winners','x3 / x4 / Smash'];
+    const STAT_KEYS   = ['1srv','2srv','ufe','fe','df','win','smash'];
 
     function formatServeStat(value, total) {
         if (total <= 0) return `${value}`; // sem base para % — não calcula nem mostra 0%
