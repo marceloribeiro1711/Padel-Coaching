@@ -361,6 +361,10 @@
             font-size: 1.8vh; font-weight: 900;
             font-variant-numeric: tabular-nums; color: #ffffff;
         }
+        .stat-box-smash {
+            border-color: #1e4a8e;
+        }
+        .stat-label-smash { font-weight: 900; }
         .stats-team1 .stat-box { border-color: #1e4a8e; }
         .stats-team2 .stat-box { border-color: #1e4a8e; }
         .stats-team1 .stat-box:active { background: #1e3a6e; }

@@ -18,7 +18,7 @@
     // ============================================================
     const LIC_KEY       = 'padel_license';
     const LIC_USED_KEY  = 'padel_used_vouchers';
-    const APP_VERSION   = '1.1.91';
+    const APP_VERSION   = '1.1.93';
 
     // ---- Algoritmo HMAC — idêntico ao Vouchers.html ----
     const SECRET_KEY   = 'PadelCoaching-Voucher-Secret-2026-ChangeThisInProd';
@@ -1900,10 +1900,10 @@
     // ============================================================
     const statsState = {};
     const statIds = [
-        's_1srv_p1','s_2srv_p1','s_df_p1','s_ufe_p1','s_fe_p1','s_win_p1',
-        's_1srv_p2','s_2srv_p2','s_df_p2','s_ufe_p2','s_fe_p2','s_win_p2',
-        's_1srv_p3','s_2srv_p3','s_df_p3','s_ufe_p3','s_fe_p3','s_win_p3',
-        's_1srv_p4','s_2srv_p4','s_df_p4','s_ufe_p4','s_fe_p4','s_win_p4'
+        's_1srv_p1','s_2srv_p1','s_df_p1','s_ufe_p1','s_fe_p1','s_win_p1','s_smash_p1',
+        's_1srv_p2','s_2srv_p2','s_df_p2','s_ufe_p2','s_fe_p2','s_win_p2','s_smash_p2',
+        's_1srv_p3','s_2srv_p3','s_df_p3','s_ufe_p3','s_fe_p3','s_win_p3','s_smash_p3',
+        's_1srv_p4','s_2srv_p4','s_df_p4','s_ufe_p4','s_fe_p4','s_win_p4','s_smash_p4'
     ];
     statIds.forEach(id => { statsState[id] = 0; });
 
@@ -1926,6 +1926,34 @@
         document.getElementById(id).textContent = statsState[id];
         if (id.startsWith('s_1srv_') || id.startsWith('s_2srv_')) {
             updateServePct(id.slice(-2));
+        }
+    }
+
+    // Smash: incrementa smash E winner em simultâneo
+    function incSmash(smashId) {
+        if (state.matchOver) return;
+        var suffix = smashId.slice(-2); // 'p1','p2','p3','p4'
+        var winId = 's_win_' + suffix;
+        statsState[smashId]++;
+        statsState[winId]++;
+        var elS = document.getElementById(smashId);
+        var elW = document.getElementById(winId);
+        if (elS) elS.textContent = statsState[smashId];
+        if (elW) elW.textContent = statsState[winId];
+    }
+
+    // Decrementa smash E winner em simultâneo (só se ambos > 0)
+    function decSmash(smashId) {
+        if (state.matchOver) return;
+        var suffix = smashId.slice(-2);
+        var winId = 's_win_' + suffix;
+        if (statsState[smashId] > 0 && statsState[winId] > 0) {
+            statsState[smashId]--;
+            statsState[winId]--;
+            var elS = document.getElementById(smashId);
+            var elW = document.getElementById(winId);
+            if (elS) elS.textContent = statsState[smashId];
+            if (elW) elW.textContent = statsState[winId];
         }
     }
 
@@ -1955,35 +1983,66 @@
     }
 
     // Long-press (600ms) para decrementar; toque curto incrementa
-    document.querySelectorAll('.stat-box').forEach(box => {
-        const id = box.dataset.stat;
-        let timer = null, isLong = false, hasTouched = false;
+    document.querySelectorAll('.stat-box').forEach(function(box) {
+        var id = box.dataset.stat;
+        var timer = null, isLong = false, hasTouched = false;
 
-        box.addEventListener('touchstart', e => {
+        box.addEventListener('touchstart', function(e) {
             hasTouched = true;
             isLong = false;
-            timer = setTimeout(() => {
+            timer = setTimeout(function() {
                 isLong = true;
                 decStatById(id);
             }, 600);
         }, { passive: true });
 
-        box.addEventListener('touchend', e => {
+        box.addEventListener('touchend', function(e) {
             clearTimeout(timer);
             if (!isLong) incStat(id);
         });
 
-        box.addEventListener('touchmove', () => clearTimeout(timer));
+        box.addEventListener('touchmove', function() { clearTimeout(timer); });
 
-        // Desktop: click incrementa, contextmenu decrementa
-        box.addEventListener('click', e => {
+        box.addEventListener('click', function(e) {
             if (hasTouched) { hasTouched = false; return; }
             incStat(id);
         });
-        box.addEventListener('contextmenu', e => {
+        box.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             if (hasTouched) { hasTouched = false; return; }
             decStatById(id);
+        });
+    });
+
+    // Smash boxes: toque curto = +1 smash +1 winner; long press 600ms = -1 smash -1 winner
+    document.querySelectorAll('.stat-box-smash').forEach(function(box) {
+        var id = box.dataset.stat;
+        var timer = null, isLong = false, hasTouched = false;
+
+        box.addEventListener('touchstart', function(e) {
+            hasTouched = true;
+            isLong = false;
+            timer = setTimeout(function() {
+                isLong = true;
+                decSmash(id);
+            }, 600);
+        }, { passive: true });
+
+        box.addEventListener('touchend', function(e) {
+            clearTimeout(timer);
+            if (!isLong) incSmash(id);
+        });
+
+        box.addEventListener('touchmove', function() { clearTimeout(timer); });
+
+        box.addEventListener('click', function(e) {
+            if (hasTouched) { hasTouched = false; return; }
+            incSmash(id);
+        });
+        box.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            if (hasTouched) { hasTouched = false; return; }
+            decSmash(id);
         });
     });
 
