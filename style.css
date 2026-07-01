@@ -184,8 +184,8 @@
             position: relative; gap: 0;
             overflow: visible;
         }
-        .team1.p-team-panel { flex: 0.82; }
-        .team2.p-team-panel { flex: 1.18; }
+        .team1.p-team-panel { flex: 0.82; padding-bottom: 2.5vh; }
+        .team2.p-team-panel { flex: 1.18; padding-top: 2.5vh; }
         .p-team-panel:last-child { border-bottom: none; }
 
         .team-bar {
@@ -239,7 +239,6 @@
         /* Espaço perto da linha central para o banner END OF MATCH */
         .team1 .p-scores-col { padding-bottom: 0; }
         .team2 .p-scores-col { padding-top: 0; }
-        .team2.p-team-panel { padding-top: 0.3vh; padding-bottom: 0.2vh; }
         .scores-labels { display: flex; align-items: center; }
         .score-label-cell {
             flex: 1; text-align: center;
@@ -472,7 +471,7 @@
 
         /* GOLDEN POINT banner — entre as duas caixas de points */
         .gp-divider-wrap {
-            position: absolute; left: 0; right: 0; top: 50%;
+            position: absolute; left: 0; right: 0; top: 41%;
             transform: translateY(-50%);
             pointer-events: none; z-index: 101;
         }
@@ -489,7 +488,7 @@
         .gp-divider-badge.show { opacity: 1; }
         /* Break Point — centrado na linha divisória, mesmo tamanho que GP */
         .bp-center-badge {
-            position: absolute; left: 50%; top: 50%;
+            position: absolute; left: 50%; top: 41%;
             transform: translate(-50%, -50%);
             background: #c8e030; color: #0b1a35;
             font-size: 1.1vh; font-weight: 900; letter-spacing: 2px;
@@ -512,7 +511,7 @@
            MATCH TIMER
         ============================================================ */
         .match-timer {
-            position: absolute; left: 5vw; top: 50%;
+            position: absolute; left: 5vw; top: 41%;
             transform: translateY(-50%);
             background: #0e2040; border: 1.5px solid #1e3a6e;
             border-radius: 7px; padding: 0.35vh 2.5vw;
