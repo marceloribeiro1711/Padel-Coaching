@@ -201,7 +201,7 @@
             flex: 1; display: flex; flex-direction: column;
             justify-content: flex-start; gap: 0.8vh;
         }
-        .team1 .p-players-col { justify-content: flex-start; gap: 5vh; }
+        .team1 .p-players-col { justify-content: flex-start; gap: 8vh; }
         /* p-photos-row definido na secção de stats abaixo */
         .player-card {
             position: relative; display: inline-block;
@@ -373,7 +373,7 @@
             flex: 1; display: flex; flex-direction: column;
             justify-content: flex-start; gap: 0.8vh;
         }
-        .team1 .p-players-col { justify-content: flex-start; gap: 5vh; }
+        .team1 .p-players-col { justify-content: flex-start; gap: 8vh; }
 
         .player-card {
             position: relative; display: inline-block;
