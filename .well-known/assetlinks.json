@@ -1,10 +1,8 @@
 [{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.marceloribeiro.padelcoaching",
-    "sha256_cert_fingerprints": [
-      "1B:FF:B0:91:27:5F:0C:F4:F7:46:23:61:3F:77:1A:27:FB:D2:05:C4:A0:81:68:12:1F:B2:08:3E:B4:00:FF:59"
-    ]
-  }
-}]
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.marceloribeiro1711.twa",
+        "sha256_cert_fingerprints": ["A2:9C:8D:07:8E:6D:1A:73:DE:7F:B7:9C:2A:19:7E:0A:A9:3D:4F:8B:32:EF:60:AF:28:D9:7A:49:7F:16:F3:AE"]
+      }
+    }]
