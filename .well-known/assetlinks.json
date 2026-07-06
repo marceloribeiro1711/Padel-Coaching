@@ -2,7 +2,7 @@
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target": {
         "namespace": "android_app",
-        "package_name": "io.github.marceloribeiro1711.twa",
+        "package_name": "com.marceloribeiro.padelcoaching",
         "sha256_cert_fingerprints": ["B9:3E:33:CB:A3:A8:28:D9:7D:1A:A8:70:6F:FF:C8:E8:D3:F6:DE:C5:22:9F:42:85:A0:C5:84:83:D0:06:86:C7"]
       }
     }]
