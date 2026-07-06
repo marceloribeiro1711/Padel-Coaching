@@ -1,11 +1,11 @@
 {
-  "id": "./",
+  "id": "https://marceloribeiro1711.github.io/Padel-Coaching/",
   "name": "Padel Coaching",
   "short_name": "Padel Coaching",
   "description": "Professional padel coaching app with real-time scoreboard, match statistics tracking, and TV landscape mode for live matches.",
-  "start_url": "./index.html",
-  "scope": "./",
-  "display": "standalone",
+  "start_url": "https://marceloribeiro1711.github.io/Padel-Coaching/",
+  "scope": "https://marceloribeiro1711.github.io/Padel-Coaching/",
+  "display": "fullscreen",
   "orientation": "any",
   "background_color": "#0b1a35",
   "theme_color": "#0b1a35",
@@ -134,5 +134,11 @@
       "form_factor": "wide",
       "label": "Landscape TV Scoreboard"
     }
-  ]
+  ],
+  "display_override": [
+    "fullscreen",
+    "standalone",
+    "minimal-ui"
+  ],
+  "prefer_related_applications": false
 }
