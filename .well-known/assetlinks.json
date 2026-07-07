@@ -1,11 +1,8 @@
-[
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "Padel Score and Coaching",
-      "sha256_cert_fingerprints":
-        ["00:A9:68:A8:58:B3:7C:08:32:68:1C:24:BA:49:4E:0A:E4:4D:22:25:CF:A4:18:DB:3B:1D:22:18:19:8A:F9:CF"]
-    }
-  }
-]
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.marceloribeiro.padelcoaching",
+        "sha256_cert_fingerprints": ["70:4C:F1:06:94:F9:D6:FE:67:AE:C8:E1:D6:0F:22:88:22:50:9B:BD:FB:E7:5A:81:A7:F6:FB:E1:A7:39:19:8C"]
+      }
+    }]
