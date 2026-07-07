@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.marceloribeiro.padelcoaching",
+        "sha256_cert_fingerprints": ["49:D5:19:F7:A5:A4:B0:16:DF:8F:8A:AC:C9:70:6D:73:BA:34:08:4F:C4:2F:3D:FD:71:8A:04:5E:56:3E:51:EA"]
+      }
+    }]
