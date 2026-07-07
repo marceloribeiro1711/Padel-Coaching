@@ -3,6 +3,6 @@
       "target": {
         "namespace": "android_app",
         "package_name": "com.marceloribeiro.padelcoaching",
-        "sha256_cert_fingerprints": ["49:D5:19:F7:A5:A4:B0:16:DF:8F:8A:AC:C9:70:6D:73:BA:34:08:4F:C4:2F:3D:FD:71:8A:04:5E:56:3E:51:EA"]
+        "sha256_cert_fingerprints": ["70:4C:F1:06:94:F9:D6:FE:67:AE:C8:E1:D6:0F:22:88:22:50:9B:BD:FB:E7:5A:81:A7:F6:FB:E1:A7:39:19:8C"]
       }
     }]
