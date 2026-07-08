@@ -18,7 +18,7 @@
     // ============================================================
     const LIC_KEY       = 'padel_license';
     const LIC_USED_KEY  = 'padel_used_vouchers';
-    const APP_VERSION   = '1.1.109';
+    const APP_VERSION   = '1.1.110';
 
     // ---- Algoritmo HMAC — idêntico ao Vouchers.html ----
     const SECRET_KEY   = 'PadelCoaching-Voucher-Secret-2026-ChangeThisInProd';
@@ -1981,7 +1981,7 @@
     }
 
     // Long-press (600ms) para decrementar; toque curto incrementa
-    document.querySelectorAll('.stat-box').forEach(function(box) {
+    document.querySelectorAll('.stat-box:not(.stat-box-smash)').forEach(function(box) {
         var id = box.dataset.stat;
         var timer = null, isLong = false, hasTouched = false;
 
